@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AI Chat</title>
+
+  <link rel="stylesheet" href="/style.css"/>
+  <script src="/script.js" defer></script>
+</head>
+
+<body>
+
+<div class="bg"></div>
+
+<div id="overlay" class="overlay"></div>
+
+<div class="app">
+
+  <button id="menu-btn" class="menu-btn">☰</button>
+
+  <aside id="sidebar" class="sidebar glass">
+
+    <h2 class="logo">AI Chat</h2>
+
+    <button id="new-chat" class="btn-glossy">＋ New Chat</button>
+
+    <div id="history" class="history"></div>
+
+    <div class="theme-row">
+      🌙
+      <label class="switch">
+        <input type="checkbox" id="theme-toggle">
+        <span class="slider"></span>
+      </label>
+      ☀️
+    </div>
+
+  </aside>
+
+  <main class="main">
+
+    <div id="welcome" class="welcome">
+      <h1>👋 Welcome to AI Chat</h1>
+      <p>
+        Ask questions, upload files or images, or use your voice.<br>
+        I'm here to help you instantly.
+      </p>
+    </div>
+
+    <div id="chat-box" class="chat-box"></div>
+
+    <div class="input-wrap">
+      <div class="input-area">
+
+        <input type="file" id="file-input" hidden accept="image/*,.txt,.md,.js,.py,.html,.css,.json">
+
+        <button id="upload-btn" class="icon-btn" title="Upload file">📎</button>
+        <button id="voice-btn" class="icon-btn" title="Voice input">🎤</button>
+
+        <input id="user-input" placeholder="Ask me anything..." autocomplete="off">
+
+        <button id="send-btn" class="send-btn" title="Send message">➤</button>
+
+      </div>
+    </div>
+
+  </main>
+
+</div>
+
+</body>
+</html>
