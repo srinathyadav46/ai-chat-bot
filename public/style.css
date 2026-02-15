@@ -2,11 +2,11 @@
   --bg:#0a0e14;
   --glass:rgba(255,255,255,0.06);
   --border:rgba(255,255,255,0.15);
-  --accent:#00d9a3;
+  --accent:#8b5cf6;
   --text:#e4e4e7;
   --bot-bg:#2d333b;
   --bot-text:#e4e4e7;
-  --user-bg:#00d9a3;
+  --user-bg:#8b5cf6;
   --user-text:#000;
   --sidebar-bg:rgba(15,20,25,0.95);
 }
@@ -15,11 +15,11 @@
   --bg:#f0f2f5;
   --glass:rgba(255,255,255,0.98);
   --border:rgba(0,0,0,0.08);
-  --accent:#00b87c;
+  --accent:#7c3aed;
   --text:#0a0a0a;
   --bot-bg:#ffffff;
   --bot-text:#0a0a0a;
-  --user-bg:#00b87c;
+  --user-bg:#7c3aed;
   --user-text:#ffffff;
   --sidebar-bg:rgba(255,255,255,0.98);
 }
@@ -48,7 +48,7 @@ body.theme-transitioning *{
   position:fixed;
   inset:0;
   background:
-    radial-gradient(circle at 20% 20%, #00d9a344, transparent 35%),
+    radial-gradient(circle at 20% 20%, #8b5cf644, transparent 35%),
     radial-gradient(circle at 80% 80%, #3b82f644, transparent 35%),
     var(--bg);
   z-index:-1;
@@ -57,7 +57,7 @@ body.theme-transitioning *{
 
 .light .bg{
   background:
-    radial-gradient(circle at 20% 20%, #00b87c11, transparent 50%),
+    radial-gradient(circle at 20% 20%, #7c3aed11, transparent 50%),
     radial-gradient(circle at 80% 80%, #3b82f611, transparent 50%),
     var(--bg);
 }
@@ -112,10 +112,10 @@ body.theme-transitioning *{
   cursor:pointer;
   font-weight:600;
   font-size:14px;
-  background:linear-gradient(135deg, var(--accent), #00b87c);
+  background:linear-gradient(135deg, var(--accent), #6d28d9);
   color:white;
   box-shadow:
-    0 4px 16px rgba(0,217,163,0.3),
+    0 4px 16px rgba(139,92,246,0.3),
     inset 0 1px 0 rgba(255,255,255,0.3);
   transition:all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   position:relative;
@@ -140,7 +140,7 @@ body.theme-transitioning *{
 .btn-glossy:hover{
   transform:translateY(-2px);
   box-shadow:
-    0 6px 24px rgba(0,217,163,0.4),
+    0 6px 24px rgba(139,92,246,0.4),
     inset 0 1px 0 rgba(255,255,255,0.3);
 }
 
@@ -231,7 +231,7 @@ body.theme-transitioning *{
 }
 
 .history-item.active{
-  background:linear-gradient(135deg, rgba(0,217,163,0.15), rgba(59,130,246,0.15));
+  background:linear-gradient(135deg, rgba(139,92,246,0.15), rgba(59,130,246,0.15));
   border-left:3px solid var(--accent);
 }
 
@@ -327,7 +327,7 @@ body.theme-transitioning *{
   justify-content:center;
   font-size:18px;
   background:linear-gradient(135deg, var(--accent), #3b82f6);
-  box-shadow:0 4px 12px rgba(0,217,163,0.3);
+  box-shadow:0 4px 12px rgba(139,92,246,0.3);
   transition:transform 0.2s ease;
 }
 
@@ -336,7 +336,7 @@ body.theme-transitioning *{
 }
 
 .light .avatar{
-  box-shadow:0 2px 8px rgba(0,184,124,0.2);
+  box-shadow:0 2px 8px rgba(124,58,237,0.2);
 }
 
 .msg-wrapper{
@@ -359,7 +359,7 @@ body.theme-transitioning *{
   background:var(--user-bg);
   color:var(--user-text);
   border-bottom-right-radius:4px;
-  box-shadow:0 2px 12px rgba(0,217,163,0.3);
+  box-shadow:0 2px 12px rgba(139,92,246,0.3);
 }
 
 .msg-container.bot .msg{
@@ -616,7 +616,7 @@ body.theme-transitioning *{
 
 .retry-btn:hover{
   transform:scale(1.05);
-  box-shadow:0 4px 12px rgba(0,217,163,0.4);
+  box-shadow:0 4px 12px rgba(139,92,246,0.4);
 }
 
 .input-wrap{
@@ -641,8 +641,8 @@ body.theme-transitioning *{
 .input-area:focus-within{
   border-color:var(--accent);
   box-shadow:
-    0 8px 32px rgba(0,217,163,0.2),
-    0 0 0 3px rgba(0,217,163,0.1),
+    0 8px 32px rgba(139,92,246,0.2),
+    0 0 0 3px rgba(139,92,246,0.1),
     inset 0 1px 0 rgba(255,255,255,0.1);
 }
 
@@ -655,8 +655,8 @@ body.theme-transitioning *{
 
 .light .input-area:focus-within{
   box-shadow:
-    0 4px 24px rgba(0,184,124,0.15),
-    0 0 0 3px rgba(0,184,124,0.1),
+    0 4px 24px rgba(124,58,237,0.15),
+    0 0 0 3px rgba(124,58,237,0.1),
     inset 0 1px 0 rgba(255,255,255,0.5);
 }
 
@@ -708,19 +708,19 @@ body.theme-transitioning *{
   border-radius:50%;
   border:none;
   cursor:pointer;
-  background:linear-gradient(135deg, var(--accent), #00b87c);
+  background:linear-gradient(135deg, var(--accent), #6d28d9);
   color:white;
   display:flex;
   align-items:center;
   justify-content:center;
   font-size:20px;
-  box-shadow:0 4px 16px rgba(0,217,163,0.4);
+  box-shadow:0 4px 16px rgba(139,92,246,0.4);
   transition:all 0.3s ease;
 }
 
 .send-btn:hover{
   transform:scale(1.1);
-  box-shadow:0 6px 20px rgba(0,217,163,0.5);
+  box-shadow:0 6px 20px rgba(139,92,246,0.5);
 }
 
 .send-btn:active{
@@ -759,8 +759,8 @@ body.theme-transitioning *{
 }
 
 input:checked + .slider{
-  background:linear-gradient(135deg, var(--accent), #00b87c);
-  box-shadow:0 0 12px rgba(0,217,163,0.5);
+  background:linear-gradient(135deg, var(--accent), #6d28d9);
+  box-shadow:0 0 12px rgba(139,92,246,0.5);
 }
 
 input:checked + .slider:before{
@@ -839,7 +839,7 @@ input:checked + .slider:before{
 
 .settings-group input[type="text"]:focus{
   border-color:var(--accent);
-  box-shadow:0 0 0 3px rgba(0,217,163,0.1);
+  box-shadow:0 0 0 3px rgba(139,92,246,0.1);
 }
 
 .light .settings-group input[type="text"]{
@@ -880,14 +880,14 @@ input:checked + .slider:before{
 }
 
 .btn-primary{
-  background:linear-gradient(135deg, var(--accent), #00b87c);
+  background:linear-gradient(135deg, var(--accent), #6d28d9);
   color:white;
-  box-shadow:0 4px 12px rgba(0,217,163,0.3);
+  box-shadow:0 4px 12px rgba(139,92,246,0.3);
 }
 
 .btn-primary:hover{
   transform:translateY(-2px);
-  box-shadow:0 6px 16px rgba(0,217,163,0.4);
+  box-shadow:0 6px 16px rgba(139,92,246,0.4);
 }
 
 .btn-secondary{
@@ -1003,6 +1003,48 @@ input:checked + .slider:before{
 
 .overlay.show{
   display:block;
+}
+
+/* ─── Context-aware cursors ─────────────────────────────────────────── */
+button,
+.history-item,
+.slider,
+label.checkbox-label,
+.msg-action-btn,
+.remove-preview,
+.delete-chat-btn,
+.retry-btn,
+.stop-btn {
+  cursor: pointer;
+}
+
+#user-input,
+.settings-group input[type="text"] {
+  cursor: text;
+}
+
+.msg-wrapper:hover .msg {
+  cursor: default;
+}
+
+.icon-btn:hover,
+.send-btn:hover,
+.btn-glossy:hover,
+.btn-primary:hover,
+.btn-secondary:hover,
+.btn-danger:hover {
+  cursor: pointer;
+}
+
+body.is-loading .send-btn,
+body.is-loading #user-input {
+  cursor: wait;
+}
+
+body.is-loading .icon-btn,
+body.is-loading .send-btn {
+  pointer-events: none;
+  opacity: 0.7;
 }
 
 ::-webkit-scrollbar{

@@ -37,23 +37,32 @@ document.addEventListener('mousemove', (e) => {
 });
 
 function updateDynamicGradient() {
-  if (document.body.classList.contains('light')) return;
-  
   mouseX += (targetX - mouseX) * 0.05;
   mouseY += (targetY - mouseY) * 0.05;
-  
+
   const x = (mouseX / window.innerWidth) * 100;
   const y = (mouseY / window.innerHeight) * 100;
   const bg = document.querySelector('.bg');
-  
+
   if (bg) {
-    bg.style.background = `
-      radial-gradient(circle at ${x}% ${y}%, #00d9a344, transparent 35%),
-      radial-gradient(circle at ${100-x}% ${100-y}%, #3b82f644, transparent 35%),
-      var(--bg)
-    `;
+    const isLight = document.body.classList.contains('light');
+    if (isLight) {
+      // Subtle pastel gradients for light mode
+      bg.style.background = `
+        radial-gradient(circle at ${x}% ${y}%, rgba(139,92,246,0.10), transparent 45%),
+        radial-gradient(circle at ${100 - x}% ${100 - y}%, rgba(59,130,246,0.10), transparent 45%),
+        var(--bg)
+      `;
+    } else {
+      // Rich gradients for dark mode
+      bg.style.background = `
+        radial-gradient(circle at ${x}% ${y}%, rgba(139,92,246,0.27), transparent 35%),
+        radial-gradient(circle at ${100 - x}% ${100 - y}%, rgba(59,130,246,0.27), transparent 35%),
+        var(--bg)
+      `;
+    }
   }
-  
+
   requestAnimationFrame(updateDynamicGradient);
 }
 
@@ -486,10 +495,16 @@ function loadConversation(sessionId) {
   currentSessionId = sessionId;
   conversationHistory = session.messages || [];
   chatBox.innerHTML = '';
-  welcome.style.display = "none";
-  conversationHistory.forEach(msg => {
-    addMessage(msg.content, msg.role === 'user' ? 'user' : 'bot', msg.role === 'assistant', msg.image);
-  });
+
+  if (conversationHistory.length === 0) {
+    // Empty session — show the welcome screen
+    welcome.style.display = "block";
+  } else {
+    welcome.style.display = "none";
+    conversationHistory.forEach(msg => {
+      addMessage(msg.content, msg.role === 'user' ? 'user' : 'bot', msg.role === 'assistant', msg.image);
+    });
+  }
 }
 
 function createNewChat() {
@@ -588,6 +603,7 @@ async function sendMessage() {
   const typing = typingBubble();
   const stopBtn = addStopButton();
   currentController = new AbortController();
+  document.body.classList.add('is-loading');
   
   try {
     const res = await fetch("/chat", {
@@ -620,6 +636,7 @@ async function sendMessage() {
     }
   } finally {
     currentController = null;
+    document.body.classList.remove('is-loading');
   }
 }
 
