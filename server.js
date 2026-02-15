@@ -62,12 +62,15 @@ app.post("/chat", async (req, res) => {
       content: "You are a helpful, friendly AI assistant. Provide clear, accurate, and concise responses. Use markdown formatting when appropriate for code blocks, lists, and emphasis."
     });
 
-    // Add conversation history (if provided)
     if (history && Array.isArray(history)) {
-      // Take last 10 messages for context (excluding the current one)
-      const contextMessages = history.slice(-11, -1);
-      messages.push(...contextMessages);
-    }
+  const contextMessages = history.slice(-11, -1).map(msg => ({
+    role: msg.role,
+    content: msg.content
+  }));
+
+  messages.push(...contextMessages);
+}
+
 
     // Add current user message
     messages.push({
